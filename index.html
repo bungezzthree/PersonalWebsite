@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bungas Trisasongko | Software Quality Manager</title>
+<meta name="description" content="Software Quality Manager with 16+ years leading QA automation and SDET teams in e-commerce, fintech and telecom.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f5f9;--surface:#fff;--ink:#0d1b2e;--muted:#4c5b70;--line:#d5dde8;--accent:#2454ff;--accent-ink:#fff;--pass:#0c8a5f;--pass-bg:#dff5ec;
+--display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;--body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1422;--surface:#131f33;--ink:#e8eef8;--muted:#9fb0c7;--line:#26354d;--accent:#7b9bff;--accent-ink:#0b1422;--pass:#4ad8a2;--pass-bg:#12382d}}
+:root[data-theme="dark"]{--bg:#0b1422;--surface:#131f33;--ink:#e8eef8;--muted:#9fb0c7;--line:#26354d;--accent:#7b9bff;--accent-ink:#0b1422;--pass:#4ad8a2;--pass-bg:#12382d}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.btn{display:inline-block;padding:12px 22px;border-radius:8px;font:600 1rem var(--body);text-decoration:none;border:1.5px solid var(--ink);background:none;color:var(--ink);cursor:pointer}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover{filter:brightness(1.08)}.btn.ghost:hover{background:var(--surface)}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+
+/* sidebar */
+.side{position:fixed;top:0;bottom:0;left:0;width:248px;z-index:20;background:var(--surface);border-right:1px solid var(--line);display:flex;flex-direction:column;padding:calc(26px + env(safe-area-inset-top,0px)) 20px calc(22px + env(safe-area-inset-bottom,0px));overflow-y:auto}
+.id{display:flex;align-items:center;gap:12px;text-decoration:none;margin-bottom:34px}
+.mono-mark{width:42px;height:42px;border-radius:10px;background:var(--ink);color:var(--bg);display:grid;place-items:center;font:700 1.05rem var(--display);flex:none}
+.id b{display:block;font:700 1.02rem/1.2 var(--display)}.id small{color:var(--muted);font-size:.8rem;line-height:1.3;display:block}
+.side nav ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.side nav a{display:flex;gap:12px;align-items:baseline;padding:10px 12px;border-radius:8px;text-decoration:none;color:var(--muted);font-weight:500}
+.side nav a i{font:500 .75rem var(--mono);font-style:normal;opacity:.7}
+.side nav a:hover{background:var(--bg);color:var(--ink)}
+.side nav a[aria-current="page"]{background:var(--accent);color:var(--accent-ink)}
+.status{margin-top:auto;border-top:1px solid var(--line);padding-top:18px;font-size:.88rem;color:var(--muted)}
+.status p{margin:0 0 12px}.status p::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--pass);margin-right:8px}
+.status .btn{display:block;text-align:center;padding:9px 12px;font-size:.92rem}
+.top,.scrim{display:none}
+main{margin-left:248px}
+.wrap{max-width:940px;margin:0 auto;padding:0 40px}
+.page{display:none;padding:56px 0 72px}.page.on{display:block}
+@media(max-width:860px){
+.top{display:flex;position:sticky;top:env(safe-area-inset-top,0px);z-index:15;align-items:center;justify-content:space-between;height:56px;padding:0 20px;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top b{font:700 1.02rem var(--display)}.top .btn{padding:6px 14px;font-size:.9rem}
+.side{transform:translateX(-100%);transition:transform .25s}
+body.open .side{transform:none}
+body.open .scrim{display:block;position:fixed;inset:0;background:rgba(5,10,20,.5);z-index:19}
+main{margin-left:0}.wrap{padding:0 20px}.page{padding:36px 0 56px}}
+
+h1{font:700 clamp(2.3rem,5.6vw,4.2rem)/1.04 var(--display);letter-spacing:-.025em;margin:0 0 22px;max-width:15ch}
+h2{font:700 clamp(1.7rem,3.6vw,2.4rem)/1.15 var(--display);letter-spacing:-.02em;margin:0 0 12px}
+.eyebrow{font:500 .9rem var(--mono);color:var(--muted);margin:0 0 16px}
+.lede{font-size:1.2rem;color:var(--muted);max-width:60ch;margin:0 0 30px}
+.sub{color:var(--muted);max-width:62ch;margin:0 0 32px}
+.block{margin-top:64px}
+
+.pipe{margin-top:48px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 24px}
+.pipe-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font:500 .85rem var(--mono);color:var(--muted);margin-bottom:18px}
+.pipe-head b{color:var(--pass);background:var(--pass-bg);padding:2px 10px;border-radius:99px;font-weight:500}
+.stages{display:grid;grid-template-columns:repeat(5,1fr);list-style:none;margin:0;padding:0}
+.stages li{position:relative;padding-right:12px}
+.stages li::before{content:"";position:absolute;top:15px;left:34px;right:6px;height:2px;background:var(--line)}
+.stages li:last-child::before{display:none}
+.tick{position:relative;z-index:1;width:32px;height:32px;border-radius:50%;background:var(--pass);color:#fff;display:grid;place-items:center;font-weight:700;margin-bottom:10px}
+.stages strong{display:block;font:600 .98rem var(--display)}
+.stages span:not(.tick){display:block;font-size:.85rem;color:var(--muted);line-height:1.4;margin-top:2px}
+@media(max-width:860px){.stages{grid-template-columns:1fr;gap:16px}.stages li{display:grid;grid-template-columns:32px 1fr;column-gap:12px}.stages li::before{display:none}.tick{grid-row:span 2;margin:0}}
+@media(prefers-reduced-motion:no-preference){.tick{animation:pop .4s cubic-bezier(.2,1.4,.4,1) both;animation-delay:calc(var(--i)*.45s + .3s)}
+@keyframes pop{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px}
+.card h3{font:600 1.15rem var(--display);margin:0 0 8px}
+.card p{margin:0;color:var(--muted);font-size:.98rem}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.facts b{display:block;font:700 2rem/1.1 var(--display)}.facts span{color:var(--muted);font-size:.92rem}
+.banner{background:var(--ink);color:var(--bg);border-radius:16px;padding:36px}
+.banner h2{color:var(--bg);max-width:20ch}.banner p{color:color-mix(in srgb,var(--bg) 78%,transparent);max-width:56ch;margin:0 0 22px}
+.banner .btn.primary{background:var(--bg);color:var(--ink);border-color:var(--bg)}
+
+.job{display:grid;grid-template-columns:180px 1fr;gap:8px 28px;padding:26px 0;border-top:1px solid var(--line)}
+.job:first-of-type{border-top:0;padding-top:0}
+.when{font:500 .85rem var(--mono);color:var(--muted)}
+.job h3{font:600 1.2rem var(--display);margin:0}.co{color:var(--accent);font-weight:600;margin:0 0 10px}
+.job ul,.two ul,.plain{margin:0;padding-left:18px;color:var(--muted)}.job li{margin:5px 0}
+.role{margin-top:14px}
+@media(max-width:860px){.job{grid-template-columns:1fr}}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.skills h3,.two h3{font:600 1.05rem var(--display);margin:0 0 10px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.tags li,.tag{border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:3px 10px;font-size:.88rem;color:var(--ink)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px}
+.two li{margin:8px 0}.two li b{color:var(--ink);font-weight:600}
+
+/* projects */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}
+.filters button{font:500 .88rem var(--body);border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:5px 14px;border-radius:99px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.post{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px}
+.post:hover{border-color:var(--accent)}
+.post .when{margin-bottom:8px}.post h3{font:600 1.2rem/1.3 var(--display);margin:0 0 8px}.post p{margin:0 0 14px;color:var(--muted);font-size:.98rem}
+.back{display:inline-block;margin-bottom:24px;color:var(--accent);font-weight:600;text-decoration:none}
+.article{max-width:680px}.article h2{max-width:none}.article h3{font:600 1.2rem var(--display);margin:30px 0 8px}.article p,.article li{color:var(--muted)}
+.article .tags{margin:16px 0 28px}
+
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:0 0 40px}
+.contact-grid a{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px}
+.contact-grid a:hover{border-color:var(--accent)}
+.contact-grid small{display:block;font:500 .8rem var(--mono);color:var(--muted);margin-bottom:4px}.contact-grid b{font:600 1.05rem var(--display);word-break:break-word}
+footer{color:var(--muted);font-size:.9rem;padding:0 0 32px}
+</style>
+</head>
+<body>
+<aside class="side" id="side">
+<a class="id" href="#/home"><span class="mono-mark" aria-hidden="true">BT</span><span><b>Bungas Trisasongko</b><small>Software Quality Manager</small></span></a>
+<nav aria-label="Main"><ul>
+<li><a href="#/home" data-p="home"><i>01</i>Home</a></li>
+<li><a href="#/profile" data-p="profile"><i>02</i>Profile</a></li>
+<li><a href="#/project" data-p="project"><i>03</i>Project</a></li>
+<li><a href="#/about" data-p="about"><i>04</i>About</a></li>
+<li><a href="#/contact" data-p="contact"><i>05</i>Contact</a></li>
+</ul></nav>
+<div class="status"><p>Open to Software Quality Manager roles</p><a class="btn primary" href="mailto:bungezzthree@gmail.com">Email me</a></div>
+</aside>
+<div class="scrim" id="scrim"></div>
+<div class="top"><b>Bungas Trisasongko</b><button class="btn ghost" id="menu" aria-controls="side" aria-expanded="false">Menu</button></div>
+
+<main>
+<div class="wrap">
+
+<!-- HOME -->
+<section class="page" id="home">
+<p class="eyebrow">Software Quality Manager · Jakarta, Indonesia</p>
+<h1>I make software releases predictable.</h1>
+<p class="lede">16+ years building QA strategy, test automation and SDET teams across e-commerce, fintech and telecom. I lead quality as a business function: faster releases, fewer escaped defects, and engineers who grow.</p>
+<div class="cta"><a class="btn primary" href="#/contact">Work with me</a><a class="btn ghost" href="#/project">See my projects</a></div>
+<div class="pipe" aria-label="Quality pipeline showing five stages I own, all passing">
+<div class="pipe-head"><span>quality-pipeline / main</span><b>all stages passed</b></div>
+<ol class="stages">
+<li style="--i:0"><span class="tick" aria-hidden="true">✓</span><strong>Strategy</strong><span>QA roadmap aligned to product and business KPIs</span></li>
+<li style="--i:1"><span class="tick" aria-hidden="true">✓</span><strong>Automation</strong><span>Frameworks for web, mobile, API and microservices</span></li>
+<li style="--i:2"><span class="tick" aria-hidden="true">✓</span><strong>CI/CD gates</strong><span>Continuous testing wired into deployment</span></li>
+<li style="--i:3"><span class="tick" aria-hidden="true">✓</span><strong>Governance</strong><span>UAT review, defect metrics, release approval</span></li>
+<li style="--i:4"><span class="tick" aria-hidden="true">✓</span><strong>People</strong><span>Coaching, KPIs and career paths for SDETs</span></li>
+</ol></div>
+
+<div class="block"><h2>What your company gets</h2><p class="sub">Outcomes I have delivered, not job-title keywords.</p>
+<div class="grid">
+<article class="card"><h3>Faster, safer releases</h3><p>Integrated continuous testing into CI/CD at Blibli and introduced Change Request Form reviews for zero-downtime deployments.</p></article>
+<article class="card"><h3>Automation that scales</h3><p>Built a Selenium Java framework from scratch, ran nightly regression on a Docker Selenium grid with Jenkins, and replaced spreadsheets with TestLink.</p></article>
+<article class="card"><h3>Multi-squad leadership</h3><p>Led SDET squads across fraud detection, B2G, B2B, SEO, traffic and trade-in, working with product, engineering and business leaders.</p></article>
+<article class="card"><h3>Regulated-industry confidence</h3><p>Governing QA for banking clients: UAT scenario review, structured defect tracking and executive reporting.</p></article>
+<article class="card"><h3>Presales and vendor quality</h3><p>QA proposals, testing scope and end-to-end test strategies for enterprise engagements.</p></article>
+<article class="card"><h3>Teams that keep growing</h3><p>Regular 1:1s, technical coaching and KPI reviews for junior and senior SDETs.</p></article>
+</div></div>
+
+<div class="block facts">
+<div><b>16+ years</b><span>in software quality and engineering</span></div>
+<div><b>6+ years</b><span>managing QA at Blibli.com</span></div>
+<div><b>3 industries</b><span>e-commerce, fintech, telecom</span></div>
+<div><b>Korea 2015</b><span>Samsung Software Engineer Workshop</span></div>
+</div>
+
+<div class="block banner"><h2>Hiring a Software Quality Manager?</h2><p>Send me your release challenges and I will reply with where I would start.</p><a class="btn primary" href="#/contact">Get in touch</a></div>
+</section>
+
+<!-- PROFILE -->
+<section class="page" id="profile">
+<h2>Profile</h2><p class="sub">Experience, skills and credentials, from telecom provisioning to leading QA at one of Indonesia's largest e-commerce platforms.</p>
+
+<div class="job"><div class="when">Jun 2026 – Present</div><div>
+<h3>Quality Assurance Manager (Consultant)</h3><p class="co">PT Soluix Finteknologi Indonesia</p>
+<ul><li>Shape QA proposals, testing scope and end-to-end strategy for presales.</li><li>Own quality assurance and governance for key banking clients under strict regulation.</li><li>Direct UAT scenario reviews and test execution validation.</li><li>Set up defect tracking, QA metrics and executive stakeholder reporting.</li></ul></div></div>
+
+<div class="job"><div class="when">Aug 2018 – Oct 2025</div><div>
+<h3>Blibli.com career progression</h3><p class="co">PT Global Digital Niaga Tbk</p>
+<div><strong>Software Quality Manager</strong> <span class="when">Mar 2021 – Oct 2025</span>
+<ul><li>Led SDET squads across Allied Biz Tribe (B2G, Blibli for Business, Fraud Detection) and Activation &amp; VAS Tribe (SEO, Traffic, Trade-In, Click &amp; Collect).</li><li>Scaled enterprise automation coverage and embedded continuous testing in CI/CD.</li><li>Aligned the QA roadmap with platform scaling targets and operational KPIs.</li></ul></div>
+<div class="role"><strong>Software Quality Associate Manager</strong> <span class="when">Aug 2019 – Feb 2021</span>
+<ul><li>Managed two SDET squads and supervised the Homepage squad.</li><li>Created the Change Request Form review process for zero-downtime releases.</li><li>Replaced legacy testing with automated validation to speed up daily regression.</li></ul></div>
+<div class="role"><strong>Senior SDET</strong> <span class="when">Aug 2018 – Jul 2019</span>
+<ul><li>Architected automated test frameworks for Auth, OTP, Messaging, Member and Promotion microservices.</li></ul></div></div></div>
+
+<div class="job"><div class="when">Oct 2016 – Jul 2018</div><div>
+<h3>Senior Quality Assurance Engineer</h3><p class="co">PT Solusi Ecommerce Global (MatahariMall.com)</p>
+<ul><li>Designed the Selenium Java automation framework from scratch.</li><li>Integrated Docker Selenium grid with Jenkins for nightly regression and reporting.</li><li>Migrated scripts to Katalon Studio and moved test management to TestLink.</li></ul></div></div>
+
+<div class="job"><div class="when">Oct 2012 – Oct 2016</div><div>
+<h3>Software Quality Engineer</h3><p class="co">Samsung R&amp;D Institute Indonesia</p>
+<ul><li>QA for Samsung mobile and content services on Android, iOS and Windows Mobile.</li><li>Applied Parasoft JTest, Coverity and SonarQube for static and dynamic analysis.</li><li>Built automation frameworks integrated with Jenkins and GitLab CI.</li><li>Represented Indonesia at the 2015 Samsung Software Engineer Workshop in Suwon, Korea.</li></ul></div></div>
+
+<div class="job"><div class="when">Apr 2009 – Sep 2012</div><div>
+<h3>Engineer, IT Service Provisioning &amp; Junior Consultant</h3><p class="co">PT XL Axiata Tbk · PT Jatis Solution Ecom Tbk</p>
+<ul><li>Built Java, Oracle and TIBCO SOA provisioning systems integrated with billing and CRM at XL Axiata.</li><li>Supported SAP-integrated card management and portal projects for telecom clients at Jatis.</li></ul></div></div>
+
+<div class="block"><h2>Skills and tooling</h2><p class="sub">Hands-on depth behind the management title.</p>
+<div class="skills">
+<div><h3>Leadership</h3><ul class="tags"><li>QA strategy and governance</li><li>Multi-squad leadership</li><li>Agile/Scrum</li><li>Vendor and presales</li><li>Mentorship and KPIs</li></ul></div>
+<div><h3>Testing and automation</h3><ul class="tags"><li>Selenium</li><li>Katalon Studio</li><li>Cucumber</li><li>TestNG</li><li>Postman</li><li>SoapUI</li><li>API and performance testing</li></ul></div>
+<div><h3>CI/CD and code quality</h3><ul class="tags"><li>Jenkins</li><li>Docker</li><li>SonarQube</li><li>Parasoft JTest</li><li>Coverity</li></ul></div>
+<div><h3>Platforms and data</h3><ul class="tags"><li>Microservices</li><li>REST APIs</li><li>Android/iOS</li><li>TIBCO SOA</li><li>Java</li><li>JavaScript</li><li>SQL/PL-SQL</li><li>Oracle</li><li>MySQL</li><li>PostgreSQL</li><li>MongoDB</li></ul></div>
+<div><h3>Management tools</h3><ul class="tags"><li>Jira</li><li>Confluence</li><li>TestLink</li></ul></div>
+</div></div>
+
+<div class="block two">
+<div><h3>Education</h3><ul><li><b>Master of Management</b>, Binus Business School (2012), GPA 3.45</li><li><b>Bachelor of Computer Science</b>, Binus University (2009), GPA 3.19</li></ul>
+<h3 style="margin-top:28px">Languages</h3><ul><li><b>Indonesian</b>, native</li><li><b>English</b>, fluent, spoken and written</li></ul></div>
+<div><h3>Certifications</h3><ul><li><b>AI for Software Testers</b>, LinkedIn (2026)</li><li><b>Generative AI</b>, LinkedIn (2026)</li><li><b>Effective Technical Communication</b>, LinkedIn (2026)</li><li><b>Master of ChatGPT and Master of Gemini</b>, Coursiv (2026)</li><li><b>Fundamental Leadership Program</b>, Dale Carnegie (2020)</li><li><b>ISO 27001 Foundation</b>, Blibli (2019)</li><li><b>Samsung Software Certification</b>, Advanced (2016)</li></ul></div>
+</div>
+</section>
+
+<!-- PROJECT (blog / portfolio) -->
+<section class="page" id="project">
+<div id="plist">
+<h2>Projects</h2><p class="sub">Case studies and write-ups from my QA and engineering work. New entries are added regularly.</p>
+<div class="filters" id="filters" role="group" aria-label="Filter by topic"></div>
+<div class="grid" id="posts"></div>
+</div>
+<article class="article" id="pdetail" hidden></article>
+</section>
+
+<!-- ABOUT -->
+<section class="page" id="about">
+<h2>About me</h2>
+<div class="article" style="margin-top:20px">
+<p class="lede" style="font-size:1.1rem">I am a Software Quality Manager in Jakarta. I started as a Java and TIBCO engineer building telecom provisioning systems, then moved into QA at Samsung R&amp;D, MatahariMall and Blibli.com.</p>
+<p>That engineering background is why I lead quality hands-on. I can review a framework design, read a pipeline and challenge a release plan, and I also run the people side: 1:1s, KPI reviews and career paths for SDETs. In 2015 I represented Indonesia at the Samsung Software Engineer Workshop in Suwon, Korea.</p>
+<h3>How I work</h3>
+<ul class="plain">
+<li><b>Quality is a business function.</b> The QA roadmap follows product and operational KPIs, not just test counts.</li>
+<li><b>Gates over heroics.</b> Reviews such as Change Request Forms, UAT scenario sign-off and CI/CD checks beat last-minute firefighting.</li>
+<li><b>Automate where it pays back.</b> Frameworks, nightly regression and continuous testing so manual effort goes to judgment work.</li>
+<li><b>Grow the team.</b> Technical coaching and clear KPIs so SDETs advance and quality ownership spreads across squads.</li>
+</ul>
+<h3>Learning now</h3>
+<p>Applying generative AI to software testing. In 2026 I completed LinkedIn courses on AI for Software Testers, Generative AI and Effective Technical Communication.</p>
+<h3>Education and languages</h3>
+<p>Master of Management (Binus Business School) and Bachelor of Computer Science (Binus University). I work fluently in Indonesian and English.</p>
+<div class="cta" style="margin-top:28px"><a class="btn primary" href="#/profile">See full profile</a><a class="btn ghost" href="#/contact">Contact me</a></div>
+</div></section>
+
+<!-- CONTACT -->
+<section class="page" id="contact">
+<h2>Contact</h2><p class="sub">I am open to conversations about Software Quality Manager and quality engineering leadership roles. Send me your release challenges and I will reply with where I would start.</p>
+<div class="contact-grid">
+<a href="mailto:bungezzthree@gmail.com?subject=Software%20Quality%20Manager%20opportunity"><small>EMAIL</small><b>bungezzthree@gmail.com</b></a>
+<a href="https://www.linkedin.com/in/bungast/" rel="noopener"><small>LINKEDIN</small><b>linkedin.com/in/bungast</b></a>
+<a href="tel:+6281315556364"><small>PHONE</small><b>+62 813-1555-6364</b></a>
+</div>
+<h3 style="font:600 1.15rem var(--display);margin:0 0 8px">Helpful to include in your message</h3>
+<ul class="plain"><li>Your team size and how releases ship today</li><li>The biggest quality pain: escaped defects, slow regression or release risk</li><li>Role scope and location (Jakarta or remote)</li></ul>
+</section>
+
+</div>
+<footer><div class="wrap">© 2026 Bungas Trisasongko · Jakarta, Indonesia</div></footer>
+</main>
+
+<script>
+/* ADD A NEW PROJECT / POST: copy one object below to the TOP of this list,
+   change slug (unique, no spaces), title, date, tags, summary and body (HTML). */
+const PROJECTS=[
+{slug:"banking-qa-governance",title:"QA governance for regulated banking clients",date:"2026",tags:["Governance","Fintech"],
+summary:"Setting up UAT review, defect tracking and executive reporting that meet strict banking regulation.",
+body:`<h3>Context</h3><p>Banking clients need evidence that every release was tested against agreed scenarios. As QA Manager (Consultant) at PT Soluix Finteknologi Indonesia, I own quality and governance for these engagements.</p><h3>What I did</h3><ul><li>Reviewed UAT scenarios and validated test execution.</li><li>Set up structured defect tracking and QA metrics.</li><li>Produced executive stakeholder reporting.</li><li>Shaped QA proposals and testing scope during presales.</li></ul><h3>Takeaway</h3><p>In regulated settings, traceable scenarios and clear reporting matter as much as the tests themselves.</p>`},
+{slug:"continuous-testing-cicd",title:"Embedding continuous testing in CI/CD at Blibli",date:"2021 – 2025",tags:["Automation","CI/CD","Leadership"],
+summary:"Scaling automation coverage across several SDET squads and wiring tests into the deployment pipeline.",
+body:`<h3>Context</h3><p>Blibli.com runs many squads across tribes such as Allied Biz (B2G, Blibli for Business, Fraud Detection) and Activation &amp; VAS (SEO, Traffic, Trade-In, Click &amp; Collect).</p><h3>What I did</h3><ul><li>Led the SDET squads and aligned the QA roadmap with platform scaling targets and operational KPIs.</li><li>Scaled enterprise automation coverage.</li><li>Embedded continuous testing into CI/CD pipelines to speed up releases.</li></ul><h3>Takeaway</h3><p>Tests only protect releases when they run automatically at the point of deployment.</p>`},
+{slug:"change-request-form-review",title:"Change Request Form review for zero-downtime releases",date:"2019 – 2021",tags:["Release management","Governance"],
+summary:"A lightweight review process that made production changes safer without slowing teams down.",
+body:`<h3>Context</h3><p>As Software Quality Associate Manager at Blibli.com I managed two SDET squads and supervised the Homepage squad, where release risk was highly visible.</p><h3>What I did</h3><ul><li>Created the Change Request Form review process for zero-downtime releases.</li><li>Replaced legacy testing with automated validation to speed up daily regression.</li></ul><h3>Takeaway</h3><p>A short, consistent review gate catches risky changes before they reach production.</p>`},
+{slug:"selenium-framework-from-scratch",title:"Building a Selenium Java framework from scratch",date:"2016 – 2018",tags:["Automation","CI/CD"],
+summary:"From manual spreadsheets to a Docker Selenium grid with Jenkins nightly regression at MatahariMall.",
+body:`<h3>Context</h3><p>At PT Solusi Ecommerce Global (MatahariMall.com) there was no automation framework, and test cases lived in spreadsheets.</p><h3>What I did</h3><ul><li>Designed the Selenium Java automation framework from scratch.</li><li>Integrated a Docker Selenium grid with Jenkins for nightly regression and reporting.</li><li>Migrated scripts to Katalon Studio and moved test management to TestLink.</li></ul><h3>Takeaway</h3><p>Start with a framework the whole team can extend, then automate the schedule around it.</p>`}
+];
+const $=s=>document.querySelector(s),pages=["home","profile","project","about","contact"];
+let tag="All";
+function card(p){return `<a class="post" href="#/project/${p.slug}"><div class="when">${p.date}</div><h3>${p.title}</h3><p>${p.summary}</p><div class="tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join("")}</div></a>`}
+function list(){
+ const all=["All",...new Set(PROJECTS.flatMap(p=>p.tags))];
+ $("#filters").innerHTML=all.map(t=>`<button aria-pressed="${t===tag}" data-t="${t}">${t}</button>`).join("");
+ $("#posts").innerHTML=PROJECTS.filter(p=>tag==="All"||p.tags.includes(tag)).map(card).join("");
+}
+$("#filters").onclick=e=>{const b=e.target.closest("button");if(b){tag=b.dataset.t;list()}};
+function route(){
+ const [p0,slug]=(location.hash.replace(/^#\/?/,"")||"home").split("/");
+ const p=pages.includes(p0)?p0:"home";
+ document.querySelectorAll(".page").forEach(s=>s.classList.toggle("on",s.id===p));
+ document.querySelectorAll(".side nav a").forEach(a=>{a.dataset.p===p?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current")});
+ let title="Bungas Trisasongko | Software Quality Manager";
+ if(p==="project"){
+  const post=PROJECTS.find(x=>x.slug===slug);
+  $("#plist").hidden=!!post;$("#pdetail").hidden=!post;
+  if(post){$("#pdetail").innerHTML=`<a class="back" href="#/project">← All projects</a><div class="when">${post.date}</div><h2>${post.title}</h2><div class="tags">${post.tags.map(t=>`<span class="tag">${t}</span>`).join("")}</div>${post.body}`;title=post.title+" | Bungas Trisasongko"}
+  else{list();title="Projects | Bungas Trisasongko"}
+ }else if(p!=="home")title=p[0].toUpperCase()+p.slice(1)+" | Bungas Trisasongko";
+ document.title=title;scrollTo(0,0);setMenu(false);
+}
+function setMenu(o){document.body.classList.toggle("open",o);$("#menu").setAttribute("aria-expanded",o)}
+$("#menu").onclick=()=>setMenu(!document.body.classList.contains("open"));
+$("#scrim").onclick=()=>setMenu(false);
+addEventListener("hashchange",route);route();
+</script>
+</body>
+</html>
